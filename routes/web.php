@@ -15,4 +15,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
+
+
+Route::get('/projects', 'ProjectController@index');
+Route::post('/projects', 'ProjectController@create');
+
+Route::post('/create-project', function(){
+    App\Project::create(request(['title', 'description']));
+    return redirect('/projects');
+ })->name('create-project');

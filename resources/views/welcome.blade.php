@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Birdboard
                 </div>
 
                 <div class="links">
@@ -94,6 +94,14 @@
                     <a href="https://vapor.laravel.com">Vapor</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
+
+                <form action="{{ route('create-project')}}" method="POST">
+                    @csrf
+                    <input type="text" name="title" />
+                    <input type="text" name="description" /> 
+                    <button type="submit">Create project</button>
+                </form>
+
             </div>
         </div>
     </body>
